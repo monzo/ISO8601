@@ -59,11 +59,7 @@
 		calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
 	}
 
-	NSCalendarUnit units = (NSCalendarUnit)(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour |
-		NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitTimeZone);
-
-	NSDateComponents *dateComponents = [calendar components:units fromDate:self];
-	return [ISO8601Serialization stringForDateComponents:dateComponents];
+	return [ISO8601Serialization stringForDate:self usingCalendar:(NSCalendar *__nonnull)calendar];
 }
 
 @end

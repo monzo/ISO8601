@@ -29,12 +29,14 @@
 #pragma mark - Writing
 
 /**
- Create an ISO8601 string from date components.
+ Create an ISO8601 string from a date.
 
- @param components Date components to use.
+ @param date Date to use.
+ @param calendar The calendar to use for converting the date to date components. If `nil` is specified, the current
+ calendar is used.
 
  @return A string containing the date components as an ISO8601 string.
  */
-+ (NSString * __nullable)stringForDateComponents:(NSDateComponents * __nonnull)components;
++ (NSString * __nullable)stringForDate:(NSDate * __nonnull)date usingCalendar:(NSCalendar * __nonnull)calendar;
 
 @end
